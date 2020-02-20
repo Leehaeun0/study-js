@@ -9,3 +9,4 @@ var x = y;
 var y = a;
 
 console.log(x,y);  //x에 y값을 y에 x값을 할당해 보세요
+

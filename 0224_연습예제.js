@@ -27,6 +27,7 @@ for (let i = 0; i < 10; i++) {
 }
 console.log(str.join(''));
 
+
 console.log('-----------------');
 // 4. for문을 사용하여 0부터 10미만의 정수 중에서 홀수만을 큰 수부터 출력하시오
 for (let i = 10; i >= 0; i--){

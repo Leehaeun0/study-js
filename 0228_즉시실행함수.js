@@ -1,28 +1,28 @@
 console.log(function res() {
-    var a = 3;
-    var b = 5;
-    return a * b;
-  });  // [Function: res]
-  
-console.log(function() {
-    var a = 3;
-    var b = 5;
-    return a * b;
-  }());  // 15
+  var a = 3;
+  var b = 5;
+  return a * b;
+}); // [Function: res]
+
+console.log(function () {
+  var a = 3;
+  var b = 5;
+  return a * b;
+}()); // 15
 // 함수 그 자체를 찍는것과 함수의 호출결과 리턴값을 찍는 것은 다르다.
 
 
-var quick = function() {
-    var a = 3;
-    var b = 4;
-    return a * b;
+var quick = function () {
+  var a = 3;
+  var b = 4;
+  return a * b;
 }
 quick();
 
 (function quick() {
-    var a = 3;
-    var b = 4;
-    return a * b;
+  var a = 3;
+  var b = 4;
+  return a * b;
 })();
 // 위의 함수 리터럴 값이 그대로 원래 quick이 있던 자리로 옮긴게 즉시실행 함수이다.
 // () 그룹연산자로 함수를 값이오는 자리에 넣어서 함수 리터럴이라는 함수객체를 생성한다. 그후 함수객체에 () 호출을 붙이면 함수 호출문이 된다.

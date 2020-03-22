@@ -28,5 +28,6 @@ module.exports = {
     "no-restricted-syntax": [0, "ForOfStatement"],
     "no-multiple-empty-lines": 0,
     "no-var": 0,
+    "eol-last":0,
   },
 };

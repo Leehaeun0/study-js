@@ -29,5 +29,7 @@ module.exports = {
     "no-multiple-empty-lines": 0,
     "no-var": 0,
     "eol-last":0,
+    "padded-blocks": 0,
+    "space-in-parens": 0,
   },
 };

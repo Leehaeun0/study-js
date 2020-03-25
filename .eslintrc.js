@@ -31,5 +31,6 @@ module.exports = {
     "eol-last":0,
     "padded-blocks": 0,
     "space-in-parens": 0,
+    "no-trailing-spaces": 0,
   },
 };

@@ -7,12 +7,12 @@ let todos = [
 function toggleCompletedById(id) {
   todos.map( v => {
     if (v.id === id) {
-      v.completed = !v.completed;
+      v.completed = !v.completed; // 객체를 직접 고친다. todos가 뮤테이터 변경할수 있는 객체로 사용한 것이기 때문에 비추천
     }
   });
 }
 
-toggleCompletedById(1);
+toggleCompletedById(3);
 
 console.log(todos);
 

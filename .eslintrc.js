@@ -32,5 +32,6 @@ module.exports = {
     "padded-blocks": 0,
     "space-in-parens": 0,
     "no-trailing-spaces": 0,
+    'arrow-body-style': 0,
   },
 };

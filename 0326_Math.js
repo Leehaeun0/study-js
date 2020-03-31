@@ -116,3 +116,5 @@ console.log(Math.min(1, 2, 3)); // 1
 const arr2 = [7, 2, 5];
 console.log(Math.min(...arr2)); // 2
 console.log(Math.min.apply(null, arr2)); // 2
+
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math

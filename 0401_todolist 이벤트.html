@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" class="inputTodo">
+  <ul class="todos">
+  </ul>
+
+
+  <script>
+    const $inputTodo = document.querySelector('.inputTodo');
+    const $todos = document.querySelector('.todos');
+
+    /* span 태그로 감쌌을 떄
+    $inputTodo.onkeyup = function (e) {
+      if (e.code !== 'Enter') return;
+      $todos.innerHTML += `<li class="todo"><input type="checkbox"><span>${$inputTodo.value}</span><button class="close">X</button></li>`;
+      $inputTodo.value = '';
+    };
+    
+    $todos.onchange = function (e) {
+      e.target.nextSibling.style.textDecoration = 'line-through';
+    };
+    */
+    
+    // span 태그로 안감쌌을 때
+    $inputTodo.onkeyup = function (e) {
+      if (e.code !== 'Enter' || $inputTodo.value === '') return;
+      $todos.innerHTML += `<li class="todo"><input type="checkbox">${$inputTodo.value}<button class="close">X</button></li>`;
+      $inputTodo.value = '';
+    };
+
+    $todos.onclick = function (e) {
+      if (!e.target.matches('.close')) return;
+      $todos.removeChild(e.target.parentNode);
+    };
+
+    $todos.onchange = function (e) {
+      console.dir(e.target);
+      e.target.parentNode.style.textDecoration = 'line-through';
+    };
+
+  </script>
+</body>
+</html>

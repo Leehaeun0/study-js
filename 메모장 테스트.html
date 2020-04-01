@@ -14,7 +14,6 @@
       position: absolute;
       padding: 13px;
       box-shadow: 0px 4px 10px 1px rgba(0,0,0,.4);
-      /* text-rendering: optimizeLegibility; */
     }
     .btn {
       position: absolute;
@@ -43,10 +42,7 @@
     
     window.onclick = function (e) {
       // if 좌표값이 같지 않다면 리턴
-      // 버튼 클릭시 리턴
-      if (e.target.matches('.note')) return;
-      if (e.target.matches('.note > .btn')) return;
-      if (e.target.matches('.note > div')) return;
+      if ( e.target.matches('.note') || e.target.matches('.note > .btn') || e.target.matches('.note > div')) return;
       $box.innerHTML += `<div class="note" style="left: ${e.clientX}px; top: ${e.clientY}px; z-index: 2013;"><div contenteditable="true" class="write"></div><button class="btn">X</button></div>`;
     };
     

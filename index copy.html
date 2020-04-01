@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NAME CARD LIST</title>
+  <link rel="stylesheet" href="./reset.css">
+  <style>
+    .wrapper {
+      width: 100%;
+      background-color: antiquewhite;
+    }
+    .wrapper * {
+      box-sizing: border-box;
+    }
+    .clearfix::after {
+      display: block;
+      content: '';
+      clear: both;
+    }
+    .newInfo {
+      width: 300px;
+      margin: 20px;
+      background-color: burlywood;
+      float: left;
+      padding: 10px;
+    }
+    .newInfo input, .newInfo button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 16px;
+    }
+
+
+    .namecardList {
+      width: calc(100% - 380px);
+      margin: 20px;
+      background-color: darkgray;
+      float: right;
+      padding: 10px;
+    }
+    
+    .sortList {
+      float: right;
+      width: 70%;
+      text-align: right;
+      background-color: darkkhaki;
+      margin-bottom: 10px;
+    }
+    .sortList > li {
+      display: inline-block;
+    }
+
+    .cardList {
+      width: 100%;
+      background-color: darksalmon;
+      clear: both;
+    }
+    .namecard {
+      width: 300px;
+      background-color: #f4f4f4;
+      margin: 10px 10px 0 0;
+      float: left;
+    }
+    .namecard span {
+      display: block;
+      
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper clearfix">
+
+    <div class="newInfo">
+      <input type="text" class="newName" placeholder="이름">
+      <input type="text" class="newCompany" placeholder="회사">
+      <input type="text" class="newDivision" placeholder="부서">
+      <input type="text" class="newEmail" placeholder="이메일주소">
+      <input type="text" class="newMobile" placeholder="핸드폰번호">
+      <button class="submitBtn">등록</button>
+    </div>
+
+    <div class="namecardList">
+
+      <ul class="sortList">
+        <li class="sortName">이름순</li>
+        <li class="sortCompany">회사순</li>
+        <li class="sortRecent">최신등록순</li>
+      </ul>
+
+      <ul class="cardList clearfix">
+        <!-- <li class="namecard">
+          <span class="cardName">홍길동</span>
+          <span class="cardCompany">카카오뱅크</span>
+          <span class="cardDivision">UX디자인팀</span>
+          <span class="cardEmail">abd@kakaobank.co.kr</span>
+          <span class="cardMobile">010-1354-4645</span>
+          <button class="deleteBtn">X</button>
+        </li>
+        <li class="namecard">
+          <span class="cardName">홍길동</span>
+          <span class="cardCompany">카카오뱅크</span>
+          <span class="cardDivision">UX디자인팀</span>
+          <span class="cardEmail">abd@kakaobank.co.kr</span>
+          <span class="cardMobile">010-1354-4645</span>
+          <button class="deleteBtn">X</button>
+        </li>
+        <li class="namecard">
+          <span class="cardName">홍길동</span>
+          <span class="cardCompany">카카오뱅크</span>
+          <span class="cardDivision">UX디자인팀</span>
+          <span class="cardEmail">abd@kakaobank.co.kr</span>
+          <span class="cardMobile">010-1354-4645</span>
+          <button class="deleteBtn">X</button>
+        </li>
+        <li class="namecard">
+          <span class="cardName">홍길동</span>
+          <span class="cardCompany">카카오뱅크</span>
+          <span class="cardDivision">UX디자인팀</span>
+          <span class="cardEmail">abd@kakaobank.co.kr</span>
+          <span class="cardMobile">010-1354-4645</span>
+          <button class="deleteBtn">X</button>
+        </li> -->
+      </ul>
+
+    </div>
+
+  </div>
+  
+
+
+  <script>
+    const $submitBtn = document.querySelector('.submitBtn');
+    const $cardList = document.querySelector('.cardList');
+
+    $submitBtn.onclik = function (e) {
+      $cardList.innerHTML += `<li class="namecard">
+          <span class="cardName">홍길동</span>
+          <span class="cardCompany">카카오뱅크</span>
+          <span class="cardDivision">UX디자인팀</span>
+          <span class="cardEmail">abd@kakaobank.co.kr</span>
+          <span class="cardMobile">010-1354-4645</span>
+          <button class="deleteBtn">X</button>
+        </li>`;
+    };
+
+  </script>
+
+</body>
+</html>

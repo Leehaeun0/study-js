@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Analog Clock</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+
+    .analog-clock {
+      position: relative;
+      margin: 100px auto 0;
+      width: 200px;
+      height: 200px;
+      background-color: aliceblue;
+      border-radius: 50%;
+    }
+
+    .hand {
+      position: absolute;
+      left: 50%;
+      width: 1px;
+      height: 100px;
+      /* 자바스크립트에 의해 덮어써진다. */
+      transform: translate3d(-50%, 0, 0);
+      transform-origin: 100% 100%;
+    }
+
+    .hour {
+      background-color: #f44336;
+      transform: translate3d(-50%, 0, 0) rotate(0deg);
+    }
+
+    .minute {
+      background-color: #3f51b5 ;
+      transform: translate3d(-50%, 0, 0) rotate(6deg);
+    }
+
+    .second {
+      background-color: #9e9e9e;
+      transform: translate3d(-50%, 0, 0) rotate(90deg);
+    }
+
+    .center-circle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
+      width: 12px;
+      height: 12px;
+      background-color: black;
+      border-radius: 50%;
+    }
+
+    .digital-clock {
+      position: absolute;
+      top: 350px;
+      left: 50%;
+      transform: translate3d(-50%, 0, 0);
+      font-size: 2em;
+      font-family: 'Source Code Pro', monospace;
+    }
+  </style>
+</head>
+<body>
+  <div class="clock">
+    <div class="analog-clock">
+      <div class="hour hand"></div>
+      <div class="minute hand"></div>
+      <div class="second hand"></div>
+      <div class="center-circle"></div>
+    </div>
+    <div class="digital-clock"></div>
+  </div>
+
+  <script>
+    const $digitalClock = document.querySelector('.digital-clock');
+    const $second = document.querySelector('.second');
+    const $minute = document.querySelector('.minute');
+    const $hour = document.querySelector('.hour');
+
+    const digitalClock = () => {
+      setInterval(() => {
+        
+        const today = new Date();
+
+        const hour = today.getHours() >= 10 ? today.getHours() : '0' + today.getHours();
+        const minute = today.getMinutes() >= 10 ? today.getMinutes() : '0' + today.getMinutes();
+        const second = today.getSeconds() >= 10 ? today.getSeconds() : '0' + today.getSeconds();
+        const milliSeconds = today.getMilliseconds();
+
+        $digitalClock.textContent = `${hour}:${minute}:${second}`;
+
+        // $hour.style.transform = `translate3d(-50%, 0, 0) rotate(${(30 * hour) + (0.1 * minute)}deg)`;
+        // $minute.style.transform = `translate3d(-50%, 0, 0) rotate(${(6 * minute) + (0.1 * second)}deg)`;
+        // $second.style.transform = `translate3d(-50%, 0, 0) rotate(${(6 * second) + (0.006 * milliSeconds)}deg)`;
+        // 초침이 끊기지 않고 부드럽게 움직임
+
+        $hour.style.transform = `translate3d(-50%, 0, 0) rotate(${(30 * hour) + (0.1 * minute)}deg)`;
+        $minute.style.transform = `translate3d(-50%, 0, 0) rotate(${6 * minute}deg)`;
+        $second.style.transform = `translate3d(-50%, 0, 0) rotate(${6 * second}deg)`;
+
+      }, 10);
+    };
+
+    window.onload = digitalClock;
+
+  </script>
+</body>
+</html>

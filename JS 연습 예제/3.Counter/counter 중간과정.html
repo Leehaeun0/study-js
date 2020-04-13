@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Counter</title>
+  <style>
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 130px;
+      margin: 20px auto;
+      font-size: 24px;
+      color: #3f51b5;
+    }
+
+    button {
+      padding: 5px 10px;
+      font-size: 24px;
+      border-radius: 5px;
+      color: #3f51b5;
+      border-color: #3f51b5;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .counter {
+      width: 50px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <button class="increase">+</button>
+    <div class="counter">0</div>
+    <button class="decrease">-</button>
+  </div>
+
+  <script>
+    const $container = document.querySelector('.container');
+    // const $increaseBtn = document.querySelector('.increase');
+    // const $decreaseBtn = document.querySelector('.decrease');
+    const $counter = document.querySelector('.counter');
+
+    // $increaseBtn.onclick = () => {
+
+    //   let count = $counter.textContent;
+
+    //   return (() => {
+    //     count++;
+    //     $counter.innerHTML = count;
+    //   })();
+    // };
+
+    // $decreaseBtn.onclick = () => {
+
+    //   let count = $counter.textContent;
+
+    //   if (count > 0) {
+    //     return (() => {
+    //       count--;
+    //       $counter.innerHTML = count;
+    //     })(); 
+    //   }
+    // };
+
+
+    const closure = btn => {
+
+      let count = 0;
+
+      if (btn === $container.firstElementChild) {
+        console.log(btn);
+        count++;
+        // $counter.innerHTML = count;
+      }
+
+      if (btn === $container.lastElementChild) {
+        console.log(btn);
+        count--;
+        // $counter.innerHTML = count;
+      }
+
+    };
+
+
+    $container.onclick = e => {
+
+
+      closure(e.target);
+      
+      // let count = $counter.textContent;
+
+      // if (e.target === $container.firstElementChild) {
+      //   // console.log(e.target);
+      //   count++;
+      //   // $counter.innerHTML = count;
+      // }
+
+      // if (e.target === $container.lastElementChild) {
+      //   // console.log(e.target);
+      //   count--;
+      //   // $counter.innerHTML = count;
+      // }
+    };
+
+
+    // $counter.innerHTML = $container.onclick();
+  </script>
+</body>
+</html>

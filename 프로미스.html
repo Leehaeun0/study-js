@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const promise = () => {
+      return new Promise((resolve, reject) => {
+        reject(0);
+      });
+    };
+
+    // console.dir(promise().then);
+
+    promise()
+      .then((item) => item, (item) => 2)
+      .then((item2) => console.log(item2));
+  </script>
+</body>
+
+</html>

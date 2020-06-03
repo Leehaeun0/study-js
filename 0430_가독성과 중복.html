@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+    <li class="goalTime">
+     <label for="">목표 공부시간</label>
+     <select name="country" id="countrySelectBox">
+      <option value="1">30분</option>
+      <option value="2">1시간</option>
+      <option value="3">1시간 30분</option>
+      <option value="4">2시간</option>
+      <option value="5">2시간 30분</option>
+      <option value="6">3시간</option>
+      <option value="7">3시간 30분</option>
+      <option value="8">4시간</option>
+      <option value="9">4시간 30분</option>
+      <option value="10">5시간</option>
+     </select>
+    </li>
+   <ul>
+  <script>
+    const getGoalTime = () => {
+      const $goalTime = document.querySelector('.goalTime select');
+      const text = [...$goalTime.children].find(option => $goalTime.value === option.value).textContent;
+      if (text === '30분') return '0:30';
+      return text.includes('분') ? `${text[0]}:30` : `${text[0]}:00`;
+    };
+    const getGoalTime2 = () => {
+      const value = +document.querySelector('.goalTime select').value;
+      if (value === 1) return '0:30';
+      if (value === 2) return '1:00';
+      if (value === 3) return '1:30';
+      if (value === 4) return '2:00';
+      if (value === 5) return '2:30';
+      if (value === 6) return '3:00';
+      if (value === 7) return '3:30';
+      if (value === 8) return '4:00';
+      if (value === 9) return '4:30';
+      return '5:00';
+    };
+
+    document.querySelector('li.goalTime select').onchange = () => {
+      console.log(getGoalTime());
+      console.log(getGoalTime2());
+    };
+  </script>
+</body>
+</html>

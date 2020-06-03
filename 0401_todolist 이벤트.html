@@ -29,7 +29,7 @@
     
     // span 태그로 안감쌌을 때
     $inputTodo.onkeyup = function (e) {
-      if (e.code !== 'Enter' || $inputTodo.value === '') return;
+      if (e.keyCode !== 13 || $inputTodo.value === '') return;
       $todos.innerHTML += `<li><input type="checkbox">${$inputTodo.value}<button class="close">X</button></li>`;
       $inputTodo.value = '';
     };

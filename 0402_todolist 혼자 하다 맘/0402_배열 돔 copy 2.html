@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" class="inputTodo">
+  <ul class="todos">
+  </ul>
+
+
+
+  <script>
+    const $todos = document.querySelector('.todos');
+
+    let todos = [
+      { id: 1, content: 'HTML', completed: false },
+      { id: 2, content: 'css', completed: true },
+      { id: 3, content: 'Javascript', completed: false }, // 상태 데이터 이게 바뀌면 화면이 바뀐다.
+    ];
+
+    function start() {
+      let html = '';
+
+      todos.sort((a, b) => b.id - a.id);
+
+      todos.forEach(todo => {
+        html += `<li id="${todo.id}"><input type="checkbox" ${todo.completed ? ' checked ' : ''}><span>${todo.content}</span><button class="close">X</button></li>`;
+      });
+
+      return html;
+    }
+
+    $todos.innerHTML = start();
+
+    
+    $todos.onchange = e => {
+      const clickId = e.target.parentNode.id;
+      // todos 배열 돌아야 함
+    };
+
+
+  </script>
+</body>
+</html>

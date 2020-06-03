@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<body>
+  <ul class="todos">
+    <li></li>
+  </ul>
+  <script>
+    const $todos = document.querySelector('.todos');
+
+    // GET 'https://jsonplaceholder.typicode.com/todos/1'
+
+    fetch('https://jsonplaceholder.typicode.com/todos/201', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({userId: 11, title: 'test', completed: false}),
+    }) // 프로미스 객체 리턴
+    // .then( res => console.log(res)) // res는 레스펀스 객체 여기안에 바디에 데이터가 있다. 바디를 직접 못보고 객체의 .json()으로 뽑아낸다.
+    .then( res => res.json())
+    .then( todo => console.log(todo))
+    .catch( err => console.error(err));
+
+    // const getTodo = async () => {
+    //   const body = await fetch('https://jsonplaceholder.typicode.com/todos/1').then
+    // }
+    console.log($todos.childNodes);
+
+    let a = [1, 2, 3];
+
+    console.log(a);
+  </script>
+</body>
+</html> 

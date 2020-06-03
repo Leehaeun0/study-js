@@ -1,0 +1,32 @@
+{
+  "week": [
+    {
+      "id": 0,
+      "dayName": "일",
+      "date": ""
+    }
+  ],
+  "goals": [
+    {
+      "id": 2,
+      "content": "면접",
+      "dDay": "2020-04-28",
+      "color": "blue"
+    }
+  ],
+  "todos": [
+    {
+      "id": 1,
+      "content": "알바면접",
+      "goal": 1,
+      "color": "blue",
+      "date": "2020-04-23",
+      "day": 4,
+      "important": true,
+      "startTime": "06:30",
+      "goalTime": "1:00",
+      "detail": "알바 이력서 작성하기",
+      "done": "00:10:21"
+    }
+  ]
+}
